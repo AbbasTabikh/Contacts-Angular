@@ -1,0 +1,27 @@
+<div class="container card mt-4 text-center w-50 shadow-sm border-opacity-75 border-warning" >
+  <div class="card-body">
+    <h2 class="text-uppercase text-center mb-5">Create contact</h2>
+    <form>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">&#64;</div>
+        </div>
+        <input [(ngModel)]="name" name="name" type="text" class="form-control shadow-none" id="inlineFormInputGroupUsername" placeholder="contact name...">
+      </div>
+
+      <div class="input-group mt-1">
+        <div class="input-group-prepend">
+          <div class="input-group-text">&#64;</div>
+        </div>
+        <input [(ngModel)]="phoneNumber" name="phoneNumber" type="text" class="form-control shadow-none" id="inlineFormInputGroupUsername2" placeholder="phone number...">
+      </div>
+
+      <select [(ngModel)]="gender" name="gender" class="form-select mt-1 shadow-none" aria-label="Default select example">
+        <option [ngValue]="Gender.Male">Male</option>
+        <option [ngValue]="Gender.Female">Female</option>
+      </select>
+
+      <button type="button" (click)="SaveContact()" class="btn btn-outline-warning mt-4">Save</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="card m-1 shadow-sm cursor-pointer" (click)="Remove(contact?.id)" (contextmenu)="OpenEdit($event)">
+  <div class="card-body shadow-sm p-1">
+    <div class="row m-1">
+      <div class="col p-1">
+        <img [ngSrc]="contact?.gender === Gender.Male ? '/male.png' : 'female.png'"
+             [alt]="contact?.gender"
+             width="48"
+             height="48"
+             class="p-0 mx-1">
+      </div>
+      <div class="col p-1">
+        <h6>{{ contact?.name }}</h6>
+        <span style="color: darkgray">{{ contact?.phone }}</span>
+      </div>
+    </div>
+  </div>
+</div>

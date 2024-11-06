@@ -1,0 +1,27 @@
+<div class="container rounded p-5 m-2 card shadow border-0">
+  <h4 class="text-bg-warning text-center p-3"></h4>
+  <div class="d-flex shadow align-items-center justify-content-center flex-wrap p-5">
+    <div *ngFor="let contact of contacts; let i = index">
+      <app-contact-item
+        (removeContactEvent)="ReceiveRemoveContactEvent($event)"
+        (openEditContactFormEvent)="ReceiveOpenEditContactFormEvent($event)"
+        [contact]="contact"
+        [index]="i">
+      </app-contact-item>
+    </div>
+  </div>
+<div class="text-center">
+  <button type="button" (click)="ToggleContactForm()" [hidden]="addButtonHidden" class="btn btn-primary w-25 my-4">
+    add contact
+  </button>
+</div>
+
+  <app-contact-form
+    [hidden]="contactFormHidden"
+    (addContactEvent)="ReceieveAddContactEvent($event)"
+    (updateContactEvent)="ReceieveUpdateContactEvent($event)"
+    [selectedContact]="selectedContact">
+  </app-contact-form>
+
+
+</div>
